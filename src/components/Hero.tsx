@@ -27,11 +27,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden cyber-grid">
-      {/* Animated background glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Realistic dark background with subtle patterns */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      
+      {/* Subtle grid overlay */}
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: `linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px)`,
+        backgroundSize: '60px 60px'
+      }} />
+      
+      {/* Ambient light effects */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -40,7 +49,7 @@ const Hero = () => {
             <div className="space-y-2">
               <p className="text-primary terminal-text text-sm tracking-wider">&gt; whoami</p>
               <h1 className="text-5xl lg:text-7xl font-bold">
-                <span className="glow-text">Jaswanth Sai</span>
+                <span className="glow-text">Maturi Jaswanth Sai</span>
                 <br />
                 <span className="text-foreground/80">Madhu Mohan</span>
               </h1>

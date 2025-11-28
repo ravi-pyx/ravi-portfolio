@@ -56,14 +56,21 @@ const About = () => {
 
               <div className="bg-card border border-primary/20 rounded-lg p-6 terminal-text">
                 <p className="text-sm text-muted-foreground mb-2">&gt; education --list</p>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div>
-                    <p className="text-primary">B.Tech Computer Science & Cybersecurity</p>
-                    <p className="text-sm text-muted-foreground">Dhanalakshmi Srinivasan University | 2022-2026</p>
+                    <p className="text-primary font-semibold">B.Tech Computer Science & Cybersecurity</p>
+                    <p className="text-sm text-muted-foreground">Dhanalakshmi Srinivasan University</p>
+                    <p className="text-xs text-muted-foreground">2022 - 2026</p>
                   </div>
-                  <div>
-                    <p className="text-foreground">Intermediate</p>
-                    <p className="text-sm text-muted-foreground">Narayana Junior College | 2020-2022</p>
+                  <div className="border-t border-border/50 pt-3">
+                    <p className="text-foreground font-semibold">Intermediate (12th)</p>
+                    <p className="text-sm text-muted-foreground">Narayana Junior College</p>
+                    <p className="text-xs text-muted-foreground">2020 - 2022</p>
+                  </div>
+                  <div className="border-t border-border/50 pt-3">
+                    <p className="text-foreground font-semibold">Schooling (10th)</p>
+                    <p className="text-sm text-muted-foreground">Bhashyam Public School</p>
+                    <p className="text-xs text-muted-foreground">Completed 2020</p>
                   </div>
                 </div>
               </div>
