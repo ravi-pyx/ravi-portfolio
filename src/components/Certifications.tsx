@@ -1,5 +1,6 @@
 import { Award, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import CertificateGallery from "./CertificateGallery";
 
 const Certifications = () => {
   const certifications = [
@@ -107,6 +108,9 @@ const Certifications = () => {
               ))}
             </div>
           </div>
+
+          {/* Certificate Gallery */}
+          <CertificateGallery />
         </div>
       </div>
     </section>
