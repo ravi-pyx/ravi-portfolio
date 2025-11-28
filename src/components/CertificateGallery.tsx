@@ -1,10 +1,24 @@
+import { useEffect } from "react";
 import { ExternalLink, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import VanillaTilt from "vanilla-tilt";
 
 const CertificateGallery = () => {
-  const openCertificate = (url: string) => {
-    window.open(url, "_blank");
-  };
+  useEffect(() => {
+    // Safe TypeScript version
+    const elements = document.querySelectorAll<HTMLElement>("[data-tilt]");
+
+    elements.forEach((el) => {
+      VanillaTilt.init(el, {
+        max: 15,
+        speed: 300,
+        glare: true,
+        "max-glare": 0.3,
+        perspective: 900,
+        scale: 1.05,
+      });
+    });
+  }, []);
 
   return (
     <div className="mt-8">
@@ -12,82 +26,93 @@ const CertificateGallery = () => {
         Certificate Gallery
       </h3>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
+        
+        {/* 🔹 ALL CERTIFICATES BOX */}
+        <div
+          data-tilt
+          className="bg-card card-glitch border border-primary/20 p-6 rounded-lg hover:border-primary/50 transition-all"
+        >
+          <h4 className="text-xl font-semibold mb-2">All Certifications</h4>
+          <p className="text-muted-foreground mb-4">View complete certificate portfolio</p>
 
-        {/* All Certificates */}
-        <div className="group relative bg-card border border-primary/20 rounded-lg overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] transition-all">
-          <div className="aspect-[4/3] bg-gradient-to-br from-cyan-900/20 to-blue-900/20 p-6 flex flex-col justify-between">
-            <div>
-              <div className="text-xs text-primary/70 mb-2 terminal-text">COMPLETE COLLECTION</div>
-              <h4 className="font-bold text-lg mb-2">All Certifications</h4>
-              <p className="text-sm text-muted-foreground">View complete certificate portfolio</p>
-            </div>
-            <Button
-              size="sm"
-              className="bg-primary/20 hover:bg-primary/30 border border-primary/40 text-primary"
-              onClick={() => openCertificate("/certificates/all-certificates.pdf")}
-            >
-              <FileText className="mr-2 h-4 w-4" />
+          <Button
+            variant="outline"
+            className="w-full hologram-btn border-primary/40 hover:border-primary"
+            asChild
+          >
+            <a href="/certificates/all-certificates.pdf" target="_blank">
+              <ExternalLink className="w-4 h-4 mr-2" />
               View All Certificates
-            </Button>
-          </div>
+            </a>
+          </Button>
         </div>
 
-        {/* Modern Resume */}
-        <div className="group relative bg-card border border-primary/20 rounded-lg overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] transition-all">
-          <div className="aspect-[4/3] bg-gradient-to-br from-slate-800 to-slate-900 p-6 flex flex-col justify-between">
-            <div>
-              <div className="text-xs text-primary/70 mb-2 terminal-text">UPDATED RESUME</div>
-              <h4 className="font-bold text-lg mb-2">Modern Resume</h4>
-              <p className="text-sm text-muted-foreground">Updated professional resume</p>
-            </div>
-            <Button
-              size="sm"
-              className="bg-primary/20 hover:bg-primary/30 border border-primary/40 text-primary"
-              onClick={() => openCertificate('/certificates/White black Free printable Modern Minimalist CV Resume_20251112_113755_0000.pdf')}
-            >
-              <FileText className="mr-2 h-4 w-4" />
+        {/* 🔹 MODERN RESUME BOX */}
+        <div
+          data-tilt
+          className="bg-card card-glitch border border-primary/20 p-6 rounded-lg hover:border-primary/50 transition-all"
+        >
+          <h4 className="text-xl font-semibold mb-2">Modern Resume</h4>
+          <p className="text-muted-foreground mb-4">Updated professional resume</p>
+
+          <Button
+            variant="outline"
+            className="w-full hologram-btn border-primary/40 hover:border-primary"
+            asChild
+          >
+            <a href="/certificates/cv-resume.pdf" target="_blank">
+              <FileText className="w-4 h-4 mr-2" />
               View Resume
-            </Button>
-          </div>
+            </a>
+          </Button>
         </div>
 
-        {/* Complete CV */}
-        <div className="group relative bg-card border border-primary/20 rounded-lg overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] transition-all">
-          <div className="aspect-[4/3] bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-6 flex flex-col justify-between">
-            <div>
-              <div className="text-xs text-primary/70 mb-2 terminal-text">PROFESSIONAL RESUME</div>
-              <h4 className="font-bold text-lg mb-2">Complete CV</h4>
-              <p className="text-sm text-muted-foreground">Full resume with all details</p>
-            </div>
-            <Button
-              size="sm"
-              className="bg-primary/20 hover:bg-primary/30 border border-primary/40 text-primary"
-              onClick={() => openCertificate("/certificates/cv-resume.pdf")}
+        {/* 🔹 COMPLETE CV BOX */}
+        <div
+          data-tilt
+          className="bg-card card-glitch border border-primary/20 p-6 rounded-lg hover:border-primary/50 transition-all"
+        >
+          <h4 className="text-xl font-semibold mb-2">Complete CV</h4>
+          <p className="text-muted-foreground mb-4">Full resume with all details</p>
+
+          <Button
+            variant="outline"
+            className="w-full hologram-btn border-primary/40 hover:border-primary"
+            asChild
+          >
+            <a
+              href="/certificates/White black Free printable Modern Minimalist CV Resume_20251112_113755_0000.pdf"
+              target="_blank"
+              download
             >
-              <FileText className="mr-2 h-4 w-4" />
+              <FileText className="w-4 h-4 mr-2" />
               Download CV
-            </Button>
-          </div>
+            </a>
+          </Button>
         </div>
 
-        {/* Skills Profile — NEW */}
-        <div className="group relative bg-card border border-primary/20 rounded-lg overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.15)] transition-all">
-          <div className="aspect-[4/3] bg-gradient-to-br from-indigo-900/20 to-purple-900/20 p-6 flex flex-col justify-between">
-            <div>
-              <div className="text-xs text-primary/70 mb-2 terminal-text">PROFESSIONAL SKILLSET</div>
-              <h4 className="font-bold text-lg mb-2">Web & API Security Skill Profile</h4>
-              <p className="text-sm text-muted-foreground">Complete security skills documentation</p>
-            </div>
-            <Button
-              size="sm"
-              className="bg-primary/20 hover:bg-primary/30 border border-primary/40 text-primary"
-              onClick={() => openCertificate('/certificates/skills-profile.pdf')}
+        {/* 🔹 SKILLS PROFILE BOX */}
+        <div
+          data-tilt
+          className="bg-card card-glitch border border-primary/20 p-6 rounded-lg hover:border-primary/50 transition-all md:col-span-3"
+        >
+          <h4 className="text-xl font-semibold mb-2">Skills Profile</h4>
+          <p className="text-muted-foreground mb-4">Web & API Security Skills Overview</p>
+
+          <Button
+            variant="outline"
+            className="w-full hologram-btn border-primary/40 hover:border-primary"
+            asChild
+          >
+            <a
+              href="/certificates/skills-profile.pdf"
+              target="_blank"
             >
-              <FileText className="mr-2 h-4 w-4" />
-              View Skill Profile
-            </Button>
-          </div>
+              <FileText className="w-4 h-4 mr-2" />
+              View Skills Profile
+            </a>
+          </Button>
         </div>
 
       </div>

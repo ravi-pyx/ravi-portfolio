@@ -2,8 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  prefix: "",
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -12,13 +16,18 @@ export default {
         "2xl": "1400px",
       },
     },
+
     extend: {
+      /* ----------------------------------------
+       * COLOR SYSTEM (Connected to index.css)
+       * -------------------------------------- */
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -47,6 +56,8 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        /* Sidebar (shadcn-ui) support */
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,65 +69,94 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+
+      /* ----------------------------------------
+       * RADIUS
+       * -------------------------------------- */
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
+      /* ----------------------------------------
+       * KEYFRAMES — Enhanced Cyber Animations
+       * -------------------------------------- */
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
-        "fade-in-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
+
+        /* Glow pulse */
         "glow-pulse": {
           "0%, 100%": {
-            boxShadow: "0 0 20px hsl(180 100% 50% / 0.3)",
+            boxShadow: "0 0 20px hsl(var(--cyber-glow) / 0.3)",
           },
           "50%": {
-            boxShadow: "0 0 40px hsl(180 100% 50% / 0.6)",
+            boxShadow: "0 0 45px hsl(var(--cyber-glow) / 0.7)",
           },
         },
+
+        /* Smooth entrance */
+        "fade-in-up": {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+
+        /* Real scan line */
+        "scan-line": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" },
+        },
+
+        /* Terminal typing */
+        typing: {
+          from: { width: "0" },
+          to: { width: "100%" },
+        },
+
+        /* Blinking cursor */
+        blink: {
+          "50%": { opacity: "0" },
+        },
+
+        /* Glitch effect */
+        glitch: {
+          "0%, 100%": { transform: "translate(0)" },
+          "20%": { transform: "translate(-2px, 2px)" },
+          "40%": { transform: "translate(-2px, -2px)" },
+          "60%": { transform: "translate(2px, 2px)" },
+          "80%": { transform: "translate(2px, -2px)" },
+        },
+
+        /* Slide-in effect */
         "slide-in-left": {
-          "0%": {
-            transform: "translateX(-100%)",
-            opacity: "0",
-          },
-          "100%": {
-            transform: "translateX(0)",
-            opacity: "1",
-          },
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
         },
       },
+
+      /* ----------------------------------------
+       * ANIMATIONS
+       * -------------------------------------- */
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fade-in-up 0.6s ease-out",
-        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 2.5s ease-in-out infinite",
         "slide-in-left": "slide-in-left 0.5s ease-out",
+        glitch: "glitch 0.3s infinite",
+        typing: "typing 2s steps(30, end) forwards",
+        blink: "blink 1s infinite",
+        "scan-line": "scan-line 4s linear infinite",
       },
     },
   },
+
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

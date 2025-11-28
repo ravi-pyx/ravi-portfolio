@@ -5,91 +5,139 @@ const About = () => {
     {
       icon: Shield,
       title: "Security First",
-      description: "Expert in vulnerability assessment and penetration testing"
+      description: "Expert in vulnerability assessment and penetration testing",
     },
     {
       icon: Code,
       title: "Full Stack Developer",
-      description: "Building secure, scalable web and mobile applications"
+      description: "Building secure, scalable web and mobile applications",
     },
     {
       icon: Bug,
       title: "Bug Hunter",
-      description: "Active researcher finding critical vulnerabilities"
+      description: "Active researcher finding critical vulnerabilities",
     },
     {
       icon: Network,
       title: "Network Security",
-      description: "Skilled in network protocols and infrastructure security"
-    }
+      description: "Skilled in network protocols and infrastructure security",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Background Accent */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
+          
+          {/* Header */}
           <div className="space-y-4 mb-12">
-            <p className="text-primary terminal-text text-sm tracking-wider">&gt; about.exe</p>
-            <h2 className="text-4xl lg:text-5xl font-bold glow-text">Who I Am</h2>
+            <p className="text-primary terminal-text text-sm tracking-wider">
+              &gt; about.exe
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold glow-text">
+              Who I Am
+            </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
+            
+            {/* LEFT SIDE — ABOUT DESCRIPTION */}
             <div className="space-y-6">
-              <div className="bg-card border border-primary/20 rounded-lg p-6 shadow-[0_0_20px_hsl(var(--primary)/0.1)]">
+              <div className="card-glitch bg-card border p-6 rounded-lg shadow-lg transition-all">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  I'm <span className="text-primary font-semibold">Maturi Jaswanth Sai Madhu Mohan</span>, 
-                  a passionate cybersecurity professional from Guntur, Andhra Pradesh. Currently pursuing 
-                  B.Tech in Computer Science with specialization in Cybersecurity at Dhanalakshmi 
+                  I'm{" "}
+                  <span className="text-primary font-semibold">
+                    Maturi Jaswanth Sai Madhu Mohan
+                  </span>
+                  , a passionate cybersecurity professional from Guntur,
+                  Andhra Pradesh. Currently pursuing B.Tech in Computer Science
+                  with specialization in Cybersecurity at Dhanalakshmi
                   Srinivasan University.
                 </p>
+
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  My expertise spans across network security, web application penetration testing, 
-                  and API security. Beyond cybersecurity, I'm also skilled as an <span className="text-primary font-semibold">App Developer</span> and <span className="text-primary font-semibold">Full Stack Developer</span>, building secure and scalable applications. I've successfully completed multiple cybersecurity internships and 
-                  solved over 10 CTF challenges, constantly sharpening my skills in the field.
+                  My expertise spans across network security, web application
+                  penetration testing, and API security. I'm also skilled as an{" "}
+                  <span className="text-primary font-semibold">
+                    App Developer
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-primary font-semibold">
+                    Full Stack Developer
+                  </span>
+                  , building secure and scalable applications.
                 </p>
+
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  As an active bug hunter, I've discovered and reported vulnerabilities across various 
-                  platforms, including findings accepted by major tech companies like Google. My goal is 
-                  to contribute to building more secure digital infrastructures.
+                  As an active bug hunter, I've discovered and reported
+                  vulnerabilities across various platforms, including findings
+                  accepted by major tech companies like Google.
                 </p>
               </div>
 
-              <div className="bg-card border border-primary/20 rounded-lg p-6 terminal-text">
-                <p className="text-sm text-muted-foreground mb-2">&gt; education --list</p>
+              {/* EDUCATION SECTION */}
+              <div className="card-glitch bg-card border p-6 rounded-lg shadow-lg transition-all terminal-text">
+                <p className="text-sm text-muted-foreground mb-2">
+                  &gt; education --list
+                </p>
+
                 <div className="space-y-4">
                   <div>
-                    <p className="text-primary font-semibold">B.Tech Computer Science & Cybersecurity</p>
-                    <p className="text-sm text-muted-foreground">Dhanalakshmi Srinivasan University</p>
+                    <p className="text-primary font-semibold">
+                      B.Tech Computer Science & Cybersecurity
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Dhanalakshmi Srinivasan University
+                    </p>
                     <p className="text-xs text-muted-foreground">2022 - 2026</p>
                   </div>
+
                   <div className="border-t border-border/50 pt-3">
-                    <p className="text-foreground font-semibold">Intermediate (12th)</p>
-                    <p className="text-sm text-muted-foreground">Narayana Junior College</p>
+                    <p className="text-foreground font-semibold">
+                      Intermediate (12th)
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Narayana Junior College
+                    </p>
                     <p className="text-xs text-muted-foreground">2020 - 2022</p>
                   </div>
+
                   <div className="border-t border-border/50 pt-3">
-                    <p className="text-foreground font-semibold">Schooling (10th)</p>
-                    <p className="text-sm text-muted-foreground">Bhashyam Public School</p>
-                    <p className="text-xs text-muted-foreground">Completed 2020</p>
+                    <p className="text-foreground font-semibold">
+                      Schooling (10th)
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Bhashyam Public School
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      Completed 2020
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* RIGHT SIDE — HIGHLIGHT CARDS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-card border border-primary/20 rounded-lg p-6 hover:border-primary/50 hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] transition-all group"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * 120}ms` }}
+                  className="card-glitch bg-card border p-6 rounded-lg shadow-lg transition-all"
                 >
-                  <item.icon className="h-10 w-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <item.icon className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

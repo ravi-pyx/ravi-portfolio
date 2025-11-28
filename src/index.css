@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* BASE THEME (Cyber Security Theme) */
 @layer base {
   :root {
     --background: 220 26% 6%;
@@ -13,9 +10,6 @@ All colors MUST be HSL.
 
     --card: 220 20% 10%;
     --card-foreground: 180 100% 90%;
-
-    --popover: 220 20% 10%;
-    --popover-foreground: 180 100% 90%;
 
     --primary: 180 100% 50%;
     --primary-foreground: 220 26% 6%;
@@ -26,102 +20,122 @@ All colors MUST be HSL.
     --muted: 220 20% 15%;
     --muted-foreground: 180 20% 60%;
 
-    --accent: 180 100% 50%;
-    --accent-foreground: 220 26% 6%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
     --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 180 100% 50%;
-
-    --radius: 0.5rem;
-
-    /* Custom cybersecurity theme variables */
-    --cyber-glow: 180 100% 50%;
-    --cyber-secondary: 280 100% 60%;
-    --terminal-bg: 220 26% 6%;
-    --code-bg: 220 20% 8%;
     --grid-color: 220 20% 15%;
-    
-    /* Gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 50% / 0.2), hsl(280 100% 60% / 0.2));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(180 100% 50% / 0.15), transparent 70%);
-    
-    /* Shadows */
-    --shadow-glow: 0 0 20px hsl(180 100% 50% / 0.3), 0 0 40px hsl(180 100% 50% / 0.2);
-    --shadow-cyber: 0 4px 20px hsl(180 100% 50% / 0.1);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
 
   .cyber-grid {
-    background-image: 
+    background-image:
       linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
   .glow-text {
-    text-shadow: 0 0 10px hsl(var(--cyber-glow)), 0 0 20px hsl(var(--cyber-glow) / 0.5);
+    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary) / 0.5);
   }
+}
 
-  .terminal-text {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  }
+/* ============================= */
+/* 🔥 NEON BORDER PULSE EFFECT   */
+/* ============================= */
+.neon-border {
+  border: 1px solid hsl(var(--primary) / 0.4);
+  animation: neonPulse 2.8s infinite ease-in-out;
+}
 
-  @keyframes glitch {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 6px hsl(var(--primary) / 0.3);
   }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.9);
+  }
+  100% {
+    box-shadow: 0 0 6px hsl(var(--primary) / 0.3);
+  }
+}
 
-  @keyframes scan-line {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-  }
+/* ============================= */
+/* 🔵 HOLOGRAM PROFILE RING      */
+/* ============================= */
+.hologram-ring {
+  position: absolute;
+  inset: -20px;
+  border-radius: 9999px;
+  border: 4px solid transparent;
 
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  background:
+    linear-gradient(
+      120deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--primary))
+    ) border-box;
 
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
+  animation: rotate-ring 6s linear infinite,
+             pulse-ring 2.5s ease-in-out infinite;
+}
 
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-  }
+@keyframes rotate-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-  .animate-glitch {
-    animation: glitch 0.3s infinite;
-  }
+@keyframes pulse-ring {
+  0%,100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.6); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.9); }
+}
+
+
+/* ============================= */
+/* ✨ SPARKLE EFFECT ON CARDS    */
+/* ============================= */
+.card-sparkle {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-sparkle::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    hsl(var(--primary)) 1px,
+    transparent 2px
+  );
+  background-size: 40px 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+}
+
+.card-sparkle:hover::after {
+  opacity: 0.25;
+  transform: translate(20px, 20px);
+}
+
+/* ============================= */
+/* 3D TILT (used by VanillaTilt) */
+/* ============================= */
+[data-tilt] {
+  transform-style: preserve-3d;
 }
