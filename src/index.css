@@ -109,7 +109,7 @@ body {
 }
 
 /* -------------------------------------------------- */
-/* NAVBAR GLOW UNDERLINE                               */
+/* NAVBAR GLOW                                        */
 /* -------------------------------------------------- */
 nav a.active::after {
   box-shadow: 0 0 12px hsl(var(--primary)),
@@ -145,22 +145,6 @@ nav a {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.7s ease-out forwards;
-}
-
-/* -------------------------------------------------- */
-/* HOLOGRAM SHIMMER                                    */
-/* -------------------------------------------------- */
-.hologram-shimmer {
-  background: linear-gradient(90deg, #00eaff 0%, #ffffff 50%, #00eaff 100%);
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200%;
-  animation: shimmer 3s linear infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: 200px 0; }
 }
 
 /* -------------------------------------------------- */
