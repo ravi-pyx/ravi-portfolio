@@ -5,8 +5,10 @@ import profileImage from "@/assets/profile-2.jpg";
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState("");
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const fullText = "Web & API Penetration Tester";
 
+  // Typewriter effect
   useEffect(() => {
     let currentIndex = 0;
     const interval = setInterval(() => {
@@ -19,6 +21,18 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // 3D Parallax Scroll Effect
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      const x = (window.innerWidth / 2 - e.clientX) / 40;
+      const y = (window.innerHeight / 2 - e.clientY) / 40;
+      setTilt({ x, y });
+    };
+
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -26,20 +40,33 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* SOFT LIGHT BG */}
-      <div className="absolute top-16 left-1/3 w-[550px] h-[550px] bg-cyan-500/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full" />
+      {/* 3D Moving Background Lights */}
+      <div
+        className="absolute top-16 left-1/3 w-[550px] h-[550px] bg-cyan-500/10 blur-[120px] rounded-full transition-transform"
+        style={{ transform: `translate(${tilt.x}px, ${tilt.y}px)` }}
+      />
+      <div
+        className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full transition-transform"
+        style={{ transform: `translate(${tilt.y}px, ${tilt.x}px)` }}
+      />
 
       <div className="container mx-auto px-4 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left animate-fade-in-up">
 
           {/* LEFT SECTION */}
-          <div className="space-y-6 animate-fade-in-up">
-            <p className="text-primary terminal-text text-sm tracking-wider">&gt; whoami</p>
+          <div className="space-y-6">
+
+            {/* Glitch Title + Shimmer */}
+            <p className="text-primary terminal-text text-sm tracking-wider animate-glitch">&gt; whoami</p>
 
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="glow-text">Maturi Jaswanth Sai</span><br />
-              <span className="text-foreground/80">Madhu Mohan</span>
+              <span className="glow-text hologram-shimmer animate-glitch">
+                Maturi Jaswanth Sai
+              </span>
+              <br />
+              <span className="text-foreground/80 hologram-shimmer delay-300">
+                Madhu Mohan
+              </span>
             </h1>
 
             <p className="text-muted-foreground terminal-text text-sm">&gt; role:</p>
@@ -51,6 +78,7 @@ const Hero: React.FC = () => {
               Cybersecurity specialist focused on web & API security, vulnerability research & exploitation.
             </p>
 
+            {/* BUTTONS */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
               <Button
                 size="lg"
@@ -70,25 +98,52 @@ const Hero: React.FC = () => {
               </Button>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex gap-4 justify-center lg:justify-start">
-              <a href="https://github.com/jaswanthsai1" className="text-muted-foreground hover:text-primary">
+            {/* SOCIAL ICONS */}
+            <div className="flex gap-4 justify-center lg:justify-start pt-2">
+              <a
+                href="https://github.com/jaswanthsai1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
+              >
                 <Github className="h-6 w-6" />
               </a>
-              <a href="https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan" className="text-muted-foreground hover:text-primary">
+
+              <a
+                href="https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan-127392329?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
+              >
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="mailto:jaswanthsaimaturi19@gmail.com" className="text-muted-foreground hover:text-primary">
+
+              <a
+                href="mailto:jaswanthsaimaturi19@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
+              >
                 <Mail className="h-6 w-6" />
               </a>
-              <a href="https://www.instagram.com/_jaswanth__sai" className="text-muted-foreground hover:text-primary">
+
+              <a
+                href="https://www.instagram.com/_jaswanth__sai?igsh=dzExemF1bHBxZTJ6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
+
           </div>
 
-          {/* RIGHT: PROFILE IMAGE */}
-          <div className="relative flex justify-center lg:justify-end">
+          {/* RIGHT: HOLOGRAM PROFILE + PARALLAX */}
+          <div
+            className="relative flex justify-center lg:justify-end transition-transform"
+            style={{ transform: `translate(${tilt.x}px, ${tilt.y}px)` }}
+          >
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 hologram-border rounded-full overflow-hidden">
               <img
                 src={profileImage}
@@ -101,6 +156,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
+      {/* SCROLL ICON */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronDown className="h-8 w-8 text-primary" />
       </div>

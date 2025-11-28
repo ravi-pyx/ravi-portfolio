@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import VanillaTilt from "vanilla-tilt";
 
+// === 4 certificate items ===
 const certificates = [
   {
     title: "All Certifications",
@@ -18,27 +20,49 @@ const certificates = [
     description: "Web & API Security Skill Profile",
     file: "/certificates/skills-profile.pdf",
   },
+  {
+    title: "Self Introduction CV",
+    description: "Full personal introduction CV",
+    file: "/certificates/Self_Introduction_Magam_Sri_Krishna.pdf",
+  },
 ];
 
 const CertificateGallery = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll("[data-tilt]");
+    VanillaTilt.init(elements as any, {
+      max: 12,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.25,
+    });
+  }, []);
+
   return (
     <section id="certificates" className="py-20 relative">
+      {/* background */}
+      <div className="absolute inset-0 cyber-grid opacity-20" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl lg:text-5xl font-bold mb-12 glow-text terminal-text">
           Certificate Gallery
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* FIX: 4 cards grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+
           {certificates.map((cert, i) => (
             <div
               key={i}
+              data-tilt
               className="
-              bg-card p-6 rounded-xl card-neon relative overflow-hidden
-              group transform transition-all hover:-translate-y-2
+                bg-card border border-primary/20 p-6 rounded-xl 
+                transition-all hover:-translate-y-2 hover:border-primary/50 
+                shadow-[0_0_20px_hsl(var(--primary)/0.15)]
+                card-neon relative overflow-hidden group
               "
             >
-              {/* neon floating sparks */}
+              {/* Neon particles */}
               <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-all">
                 <div className="absolute top-4 left-4 w-2 h-2 bg-primary rounded-full blur-sm animate-ping" />
                 <div className="absolute bottom-6 right-6 w-3 h-3 bg-secondary rounded-full blur animate-pulse" />
@@ -48,7 +72,7 @@ const CertificateGallery = () => {
               <p className="text-muted-foreground mb-4">{cert.description}</p>
 
               <Button
-                className="w-full bg-primary/20 border border-primary/40 hover:bg-primary/30"
+                className="w-full bg-primary/20 border border-primary/40 hover:bg-primary/30 transition-all"
                 asChild
               >
                 <a href={cert.file} target="_blank">
@@ -57,6 +81,7 @@ const CertificateGallery = () => {
               </Button>
             </div>
           ))}
+
         </div>
       </div>
     </section>
