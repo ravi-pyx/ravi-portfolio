@@ -40,7 +40,7 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan",
+      href: "https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan-127392329?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       icon: Instagram,
