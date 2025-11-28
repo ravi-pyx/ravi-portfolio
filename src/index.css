@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BASE THEME (Cyber Security Theme) */
+/* -------------------------------------------------- */
+/* ROOT THEME                                          */
+/* -------------------------------------------------- */
 @layer base {
   :root {
     --background: 220 26% 6%;
@@ -22,120 +24,142 @@
 
     --border: 220 20% 20%;
     --grid-color: 220 20% 15%;
+
+    --radius: 0.5rem;
+
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 280 100% 60%;
   }
 }
 
-@layer base {
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-  }
+/* -------------------------------------------------- */
+/* GLOBAL BODY                                         */
+/* -------------------------------------------------- */
+body {
+  @apply bg-background text-foreground overflow-x-hidden;
+  font-family: "Inter", sans-serif;
+}
 
-  .cyber-grid {
-    background-image:
-      linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
+/* -------------------------------------------------- */
+/* CYBER GRID                                          */
+/* -------------------------------------------------- */
+.cyber-grid {
+  background-image:
+    linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
 
-  .glow-text {
-    text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary) / 0.5);
+/* -------------------------------------------------- */
+/* TEXT EFFECTS                                        */
+/* -------------------------------------------------- */
+.glow-text {
+  text-shadow:
+    0 0 15px hsl(var(--neon-cyan)),
+    0 0 30px hsl(var(--neon-cyan) / 0.4);
+}
+
+.terminal-text {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* -------------------------------------------------- */
+/* HOLOGRAM PROFILE BORDER                             */
+/* -------------------------------------------------- */
+.hologram-border {
+  border: 3px solid hsl(var(--neon-cyan) / 0.6);
+  box-shadow:
+    0 0 25px hsl(var(--neon-cyan) / 0.7),
+    0 0 45px hsl(var(--neon-purple) / 0.6);
+  transition: 0.3s ease;
+}
+
+.hologram-border:hover {
+  box-shadow:
+    0 0 35px hsl(var(--neon-cyan)),
+    0 0 60px hsl(var(--neon-purple));
+}
+
+/* -------------------------------------------------- */
+/* CARD NEON EFFECT                                    */
+/* -------------------------------------------------- */
+.card-neon {
+  border: 1px solid hsl(var(--primary) / 0.25);
+  transition: 0.3s ease-in-out;
+}
+
+.card-neon:hover {
+  border-color: hsl(var(--primary));
+  box-shadow:
+    0 0 20px hsl(var(--primary) / 0.4),
+    0 0 40px hsl(var(--primary) / 0.2);
+  transform: translateY(-4px);
+}
+
+/* -------------------------------------------------- */
+/* BADGE HOLOGRAM                                      */
+/* -------------------------------------------------- */
+.hologram-badge {
+  transition: 0.25s ease;
+}
+
+.hologram-badge:hover {
+  box-shadow: 0 0 15px hsl(var(--primary) / 0.35);
+  transform: scale(1.07);
+}
+
+/* -------------------------------------------------- */
+/* NAVBAR GLOWING UNDERLINE                            */
+/* -------------------------------------------------- */
+nav a.active::after {
+  box-shadow: 0 0 12px hsl(var(--primary)),
+              0 0 20px hsl(var(--primary) / 0.6);
+}
+
+nav a {
+  transition: 0.25s ease !important;
+}
+
+/* -------------------------------------------------- */
+/* MOBILE FIXES                                        */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+  .cyber-ascii {
+    display: none !important;
   }
 }
 
-/* ============================= */
-/* 🔥 NEON BORDER PULSE EFFECT   */
-/* ============================= */
-.neon-border {
-  border: 1px solid hsl(var(--primary) / 0.4);
-  animation: neonPulse 2.8s infinite ease-in-out;
-}
-
-@keyframes neonPulse {
+/* -------------------------------------------------- */
+/* KEYFRAMES                                           */
+/* -------------------------------------------------- */
+@keyframes fade-in-up {
   0% {
-    box-shadow: 0 0 6px hsl(var(--primary) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.9);
+    opacity: 0;
+    transform: translateY(30px);
   }
   100% {
-    box-shadow: 0 0 6px hsl(var(--primary) / 0.3);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ============================= */
-/* 🔵 HOLOGRAM PROFILE RING      */
-/* ============================= */
-.hologram-ring {
-  position: absolute;
-  inset: -20px;
-  border-radius: 9999px;
-  border: 4px solid transparent;
-
-  background:
-    linear-gradient(
-      120deg,
-      hsl(var(--primary)),
-      hsl(var(--secondary)),
-      hsl(var(--primary))
-    ) border-box;
-
-  -webkit-mask:
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-  animation: rotate-ring 6s linear infinite,
-             pulse-ring 2.5s ease-in-out infinite;
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
 }
 
-@keyframes rotate-ring {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes hologramPulse {
+  0% {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.4);
+  }
 }
 
-@keyframes pulse-ring {
-  0%,100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.6); }
-  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.9); }
-}
-
-
-/* ============================= */
-/* ✨ SPARKLE EFFECT ON CARDS    */
-/* ============================= */
-.card-sparkle {
-  position: relative;
-  overflow: hidden;
-}
-
-.card-sparkle::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    hsl(var(--primary)) 1px,
-    transparent 2px
-  );
-  background-size: 40px 40px;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.4s ease;
-}
-
-.card-sparkle:hover::after {
-  opacity: 0.25;
-  transform: translate(20px, 20px);
-}
-
-/* ============================= */
-/* 3D TILT (used by VanillaTilt) */
-/* ============================= */
-[data-tilt] {
-  transform-style: preserve-3d;
+/* Additional glow hover effect */
+.glow-hover:hover {
+  filter: drop-shadow(0 0 10px hsl(var(--primary)));
 }
