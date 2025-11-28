@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Github, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -18,7 +18,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Guntur, Andhra Pradesh, India",
+      value: "Venkata Ramana Colony 3Rd Line Guntur, Andhra Pradesh, India",
       href: null
     }
   ];
@@ -33,13 +33,18 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan"
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/_jaswanth__sai?igsh=dzExemF1bHBxZTJ6"
     }
   ];
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4 mb-12 text-center">
@@ -51,6 +56,7 @@ const Contact = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
+            
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="bg-card border border-primary/20 rounded-lg p-6">
@@ -82,13 +88,15 @@ const Contact = () => {
               {/* Social Links */}
               <div className="bg-card border border-primary/20 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-6">Social Profiles</h3>
-                <div className="flex gap-4">
+
+                {/* FIX: flex-wrap added to avoid clipping */}
+                <div className="flex flex-wrap gap-4">
                   {socialLinks.map((social, idx) => (
                     <Button
                       key={idx}
                       variant="outline"
                       size="lg"
-                      className="flex-1 border-primary/30 hover:bg-primary/10 hover:border-primary transition-all"
+                      className="flex-1 min-w-[120px] border-primary/30 hover:bg-primary/10 hover:border-primary transition-all"
                       asChild
                     >
                       <a href={social.href} target="_blank" rel="noopener noreferrer">
@@ -145,6 +153,7 @@ const Contact = () => {
                 </a>
               </Button>
             </div>
+
           </div>
         </div>
       </div>

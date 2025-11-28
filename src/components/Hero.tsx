@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Instagram } from "lucide-react";
 import profileImage from "@/assets/profile-2.jpg";
 
 const Hero = () => {
@@ -28,23 +28,22 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Realistic dark background with subtle patterns */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-      
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
                          linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
-      
-      {/* Ambient light effects */}
+          backgroundSize: "60px 60px",
+        }}
+      />
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+          {/* Text Section */}
           <div className="space-y-6 animate-fade-in-up">
             <div className="space-y-2">
               <p className="text-primary terminal-text text-sm tracking-wider">&gt; whoami</p>
@@ -69,46 +68,59 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.5)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.7)] transition-all"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection("contact")}
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
               </Button>
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 variant="outline"
                 className="border-primary/50 hover:bg-primary/10 hover:border-primary transition-all"
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection("projects")}
               >
                 View Work
               </Button>
             </div>
 
+            {/* Social Icons */}
             <div className="flex gap-4 pt-4">
-              <a 
-                href="https://github.com/jaswanthsai1" 
-                target="_blank" 
+              <a
+                href="https://github.com/jaswanthsai1"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="h-6 w-6" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan" 
-                target="_blank" 
+
+              <a
+                href="https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a 
+
+              <a
                 href="mailto:jaswanthsaimaturi19@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-6 w-6" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/_jaswanth__sai?igsh=dzExemF1bHBxZTJ6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Instagram className="h-6 w-6" />
               </a>
             </div>
           </div>
@@ -118,13 +130,14 @@ const Hero = () => {
             <div className="relative w-80 h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full blur-2xl opacity-20 animate-glow-pulse" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.3)]">
-                <img 
-                  src={profileImage} 
-                  alt="Jaswanth Sai Madhu Mohan" 
+                <img
+                  src={profileImage}
+                  alt="Jaswanth Sai Madhu Mohan"
                   className="w-full h-full object-cover object-top scale-110"
                 />
               </div>
-              {/* Decorative elements */}
+
+              {/* Decorations */}
               <div className="absolute -top-4 -right-4 w-20 h-20 border-2 border-primary/50 rounded-lg rotate-45" />
               <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-secondary/50 rounded-lg rotate-12" />
             </div>
@@ -132,7 +145,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="h-8 w-8 text-primary" />
       </div>
