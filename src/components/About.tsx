@@ -9,8 +9,8 @@ const About = () => {
     },
     {
       icon: Code,
-      title: "Full Stack Security",
-      description: "Web & API security testing with comprehensive coverage"
+      title: "Full Stack Developer",
+      description: "Building secure, scalable web and mobile applications"
     },
     {
       icon: Bug,
@@ -44,7 +44,7 @@ const About = () => {
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   My expertise spans across network security, web application penetration testing, 
-                  and API security. I've successfully completed multiple cybersecurity internships and 
+                  and API security. Beyond cybersecurity, I'm also skilled as an <span className="text-primary font-semibold">App Developer</span> and <span className="text-primary font-semibold">Full Stack Developer</span>, building secure and scalable applications. I've successfully completed multiple cybersecurity internships and 
                   solved over 10 CTF challenges, constantly sharpening my skills in the field.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
