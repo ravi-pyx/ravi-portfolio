@@ -101,15 +101,6 @@ const Hero: React.FC = () => {
             {/* SOCIAL ICONS */}
             <div className="flex gap-4 justify-center lg:justify-start pt-2">
               <a
-                href="https://github.com/jaswanthsai1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
-              >
-                <Github className="h-6 w-6" />
-              </a>
-
-              <a
                 href="https://github.com/ravi-pyx"
                 target="_blank"
                 rel="noopener noreferrer"
