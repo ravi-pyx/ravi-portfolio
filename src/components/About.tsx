@@ -1,26 +1,26 @@
-import { Shield, Code, Bug, Network } from "lucide-react";
+import { Shield, Server, Activity, AlertTriangle } from "lucide-react";
 
 const About = () => {
   const highlights = [
     {
       icon: Shield,
-      title: "Security First",
-      description: "Expert in vulnerability assessment and penetration testing",
+      title: "Application Security",
+      description: "Securing web and API applications through secure design, testing, and remediation of vulnerabilities.",
     },
     {
-      icon: Code,
-      title: "Full Stack Developer",
-      description: "Building secure, scalable web and mobile applications",
+      icon: Server,
+      title: "Infrastructure Security",
+      description: "Designing and maintaining secure servers, cloud environments, and system configurations.",
     },
     {
-      icon: Bug,
-      title: "Bug Hunter",
-      description: "Active researcher finding critical vulnerabilities",
+      icon: Activity,
+      title: "Security Monitoring",
+      description: "Detecting threats using logging, SIEM, and continuous monitoring to respond to incidents quickly.",
     },
     {
-      icon: Network,
-      title: "Network Security",
-      description: "Skilled in network protocols and infrastructure security",
+      icon: AlertTriangle,
+      title: "Risk & Vulnerability Management",
+      description: "Identifying, prioritizing, and mitigating security risks across applications and infrastructure.",
     },
   ];
 
@@ -31,7 +31,7 @@ const About = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* Header */}
           <div className="space-y-4 mb-12">
             <p className="text-primary terminal-text text-sm tracking-wider">
@@ -43,38 +43,16 @@ const About = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            
+
             {/* LEFT SIDE — ABOUT DESCRIPTION */}
             <div className="space-y-6">
               <div className="card-glitch bg-card border p-6 rounded-lg shadow-lg transition-all">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  I'm{" "}
-                  <span className="text-primary font-semibold">
-                    Maturi Jaswanth Sai Madhu Mohan
-                  </span>
-                  , a passionate cybersecurity professional from Guntur,
-                  Andhra Pradesh. Currently pursuing B.Tech in Computer Science
-                  with specialization in Cybersecurity at Dhanalakshmi
-                  Srinivasan University.
-                </p>
-
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  My expertise spans across network security, web application
-                  penetration testing, and API security. I'm also skilled as an{" "}
-                  <span className="text-primary font-semibold">
-                    App Developer
-                  </span>{" "}
-                  and{" "}
-                  <span className="text-primary font-semibold">
-                    Full Stack Developer
-                  </span>
-                  , building secure and scalable applications.
+                  I’m <span className="text-primary font-semibold">Maddu Ravi Bhaskar</span>, a dedicated Security Engineer from Kandulapuram Village, Cumbum Mandal, Prakasam District, Andhra Pradesh. I am currently pursuing a B.Tech in Computer Science with a specialization in Cybersecurity at Dhanalakshmi Srinivasan University.
                 </p>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  As an active bug hunter, I've discovered and reported
-                  vulnerabilities across various platforms, including findings
-                  accepted by major tech companies like Google.
+                  As a Security Engineer, I focus on designing, implementing, and maintaining secure systems by applying strong principles of network security, application security, and API security. My work involves risk assessment, vulnerability analysis, security monitoring, and incident response, ensuring systems remain resilient against modern cyber threats. I am committed to building secure-by-design architectures and continuously improving security posture across applications and infrastructure.
                 </p>
               </div>
 
@@ -87,33 +65,27 @@ const About = () => {
                 <div className="space-y-4">
                   <div>
                     <p className="text-primary font-semibold">
-                      B.Tech Computer Science & Cybersecurity
+                      Dhanalakshmi Srinivasan University
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Dhanalakshmi Srinivasan University
+                      School of Engineering and Technology
                     </p>
                     <p className="text-xs text-muted-foreground">2022 - 2026</p>
                   </div>
 
                   <div className="border-t border-border/50 pt-3">
                     <p className="text-foreground font-semibold">
-                      Intermediate (12th)
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Narayana Junior College
+                      Vishaka Defence Academy
                     </p>
                     <p className="text-xs text-muted-foreground">2020 - 2022</p>
                   </div>
 
                   <div className="border-t border-border/50 pt-3">
                     <p className="text-foreground font-semibold">
-                      Schooling (10th)
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Bhashyam Public School
+                      Alpha High School
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      Completed 2020
+                      2020
                     </p>
                   </div>
                 </div>

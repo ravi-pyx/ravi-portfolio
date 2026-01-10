@@ -21,19 +21,13 @@ const Certifications = () => {
       issuer: "Dhanalakshmi Srinivasan University",
       description: "Successfully cleared qualifier test demonstrating potential and aptitude in Cyber Security through the Student Developer Community program.",
       areas: ["Cybersecurity", "Security Training", "Professional Development"]
-    },
-    {
-      title: "Bug Bounty Programs",
-      issuer: "HackerOne & Various Platforms",
-      description: "Active participation in private bug bounty programs with successful vulnerability disclosures and recognition from major tech companies.",
-      areas: ["Vulnerability Research", "Responsible Disclosure", "Web Security"]
     }
   ];
 
   return (
     <section id="certifications" className="py-20 relative">
       <div className="absolute inset-0 cyber-grid opacity-30" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-4 mb-12">
@@ -85,20 +79,12 @@ const Certifications = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  title: "Ethical Hacking",
-                  focus: "Penetration testing and vulnerability assessment"
+                  title: "Cybersecurity",
+                  focus: "Security protocols and infrastructure protection"
                 },
                 {
-                  title: "Network Security",
-                  focus: "Protocol analysis and network defense"
-                },
-                {
-                  title: "Security Policy Auditing",
-                  focus: "Compliance and security framework evaluation"
-                },
-                {
-                  title: "Incident Handling & Response",
-                  focus: "Security incident detection and mitigation"
+                  title: "VAPT Tester",
+                  focus: "Vulnerability Assessment and Penetration Testing"
                 }
               ].map((internship, idx) => (
                 <div key={idx} className="space-y-2">

@@ -13,20 +13,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "jaswanthsaimaturi19@gmail.com",
-      href: "mailto:jaswanthsaimaturi19@gmail.com",
+      value: "madduravibhaskar@gmail.com",
+      href: "mailto:madduravibhaskar@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 8247060862",
-      href: "tel:+918247060862",
+      value: "+91 6304168694",
+      href: "tel:+916304168694",
     },
     {
       icon: MapPin,
       label: "Location",
-      value:
-        "Venkata Ramana Colony 3Rd Line Guntur, Andhra Pradesh, India",
+      value: "Kandulapuram village, cumbum mandal, prakasam district, Andhra Pradesh",
       href: null,
     },
   ];
@@ -35,17 +34,12 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/jaswanthsai1",
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan-127392329?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      href: "https://github.com/ravi-pyx",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://www.instagram.com/_jaswanth__sai?igsh=dzExemF1bHBxZTJ6",
+      href: "https://www.instagram.com/ravi_xt9",
     },
   ];
 
@@ -142,11 +136,11 @@ const Contact = () => {
 
                 <ul className="space-y-2">
                   {[
+                    "Security Engineer",
                     "Network Security Engineer",
-                    "Web Penetration Tester",
-                    "API Security Specialist",
+                    "Application Security Engineer",
+                    "Cloud Security Engineer",
                     "SOC Analyst",
-                    "Bug Bounty Hunter",
                   ].map((role, idx) => (
                     <li
                       key={idx}
@@ -166,15 +160,16 @@ const Contact = () => {
                 </p>
 
                 <div className="space-y-2 text-sm">
-                  <p className="text-primary">● Available for freelance projects</p>
+                  <p className="text-primary">● Available for Security Engineer roles</p>
                   <p className="text-primary">● Open to full-time opportunities</p>
-                  <p className="text-primary">● Accepting security consultations</p>
+                  <p className="text-primary">● Hands-on in Network & Application Security</p>
+                  <p className="text-primary">● SOC & Incident Response ready</p>
                   <p className="text-secondary">● Graduating in 2026</p>
                 </div>
               </div>
 
               {/* SEND MESSAGE BUTTON (HOLOGRAM) */}
-              <a href="mailto:jaswanthsaimaturi19@gmail.com">
+              <a href="mailto:madduravibhaskar@gmail.com">
                 <button className="holo w-full py-4 text-lg rounded-lg flex items-center justify-center gap-2">
                   <Mail className="h-6 w-6" />
                   Send Message

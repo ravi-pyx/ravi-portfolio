@@ -4,22 +4,22 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "Fraud Detection System",
+      title: "Web Application Security",
       description:
-        "AI-powered fraud detection system with behavioral analysis & anomaly detection.",
-      tech: ["Python", "ML", "MySQL", "Detection"],
+        "AI-driven vulnerability scanning & penetration testing for web apps to detect OWASP Top 10 threats.",
+      tech: ["Python", "Burp Suite / OWASP", "Penetration Testing", "Vulnerability Detection"],
     },
     {
-      title: "Bug Bounty Findings",
+      title: "IoT Devices",
       description:
-        "Authentication bypass, API vulnerabilities, BOLA, and Google-accepted bug.",
-      tech: ["Burp Suite", "API", "OSINT", "Recon"],
+        "Centralized IoT system migrated to a decentralized architecture for better scalability & security.",
+      tech: ["Python", "MQTT", "Blockchain", "IoT"],
     },
     {
-      title: "CTF Challenge Solves",
+      title: "Blockchain",
       description:
-        "Privilege escalation, exploitation, cryptography, web hacking.",
-      tech: ["Nmap", "Metasploit", "Linux", "Crypto"],
+        "Secure & transparent decentralized ledger system for data integrity and trustless transactions.",
+      tech: ["Python", "Ethereum / Solidity", "Smart Contracts", "Decentralization"],
     },
   ];
 
@@ -57,7 +57,7 @@ const Projects = () => {
 
         <div className="text-center mt-10">
           <Button variant="outline" className="border-primary hover:bg-primary/10" asChild>
-            <a href="https://github.com/jaswanthsai1" target="_blank">
+            <a href="https://github.com/ravi-pyx" target="_blank">
               <Github className="mr-2 h-5 w-5" /> View More on GitHub
             </a>
           </Button>

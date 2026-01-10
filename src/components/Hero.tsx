@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown, Instagram } from "lucide-react";
-import profileImage from "@/assets/profile-2.jpg";
+import profileImage from "@/assets/profile.jpg";
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState("");
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const fullText = "Web & API Penetration Tester";
+  const fullText = "SECURITY ENGINEER";
 
   // Typewriter effect
   useEffect(() => {
@@ -61,11 +61,11 @@ const Hero: React.FC = () => {
 
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="glow-text hologram-shimmer animate-glitch">
-                Maturi Jaswanth Sai
+                Maddu Ravi Bhaskar
               </span>
               <br />
               <span className="text-foreground/80 hologram-shimmer delay-300">
-                Madhu Mohan
+
               </span>
             </h1>
 
@@ -74,8 +74,8 @@ const Hero: React.FC = () => {
               {displayText}<span className="animate-pulse">|</span>
             </p>
 
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Cybersecurity specialist focused on web & API security, vulnerability research & exploitation.
+            <p className="text-xl md:text-2xl text-white font-bold terminal-text max-w-xl mx-auto lg:mx-0 leading-relaxed tracking-wide">
+              Security Engineer focused on application and API security.
             </p>
 
             {/* BUTTONS */}
@@ -110,16 +110,16 @@ const Hero: React.FC = () => {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/maturi-jaswanth-sai-madhu-mohan-127392329?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                href="https://github.com/ravi-pyx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
               >
-                <Linkedin className="h-6 w-6" />
+                <Github className="h-6 w-6" />
               </a>
 
               <a
-                href="mailto:jaswanthsaimaturi19@gmail.com"
+                href="mailto:madduravibhaskar@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/_jaswanth__sai?igsh=dzExemF1bHBxZTJ6"
+                href="https://www.instagram.com/ravi_xt9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
@@ -147,7 +147,7 @@ const Hero: React.FC = () => {
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 hologram-border rounded-full overflow-hidden">
               <img
                 src={profileImage}
-                alt="Jaswanth Sai Madhu Mohan"
+                alt="Maddu Ravi Bhaskar"
                 className="w-full h-full object-cover object-top"
               />
             </div>

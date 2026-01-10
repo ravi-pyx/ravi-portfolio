@@ -6,24 +6,40 @@ import VanillaTilt from "vanilla-tilt";
 // === 4 certificate items ===
 const certificates = [
   {
-    title: "All Certifications",
-    description: "View complete certificate collection",
-    file: "/certificates/all-certificates.pdf",
+    title: "Certificate of Participation",
+    description: "Dhanalakshmi Srinivasan University",
+    file: "/certificates/cert-1.jpg",
   },
   {
-    title: "Modern Resume",
+    title: "Data Analytics Assessment",
+    description: "LearnTube.ai",
+    file: "/certificates/cert-2.jpg",
+  },
+  {
+    title: "VAPT Tester Internship",
+    description: "BluePeak",
+    file: "/certificates/cert-3.jpg",
+  },
+  {
+    title: "Cybersecurity Internship",
+    description: "InternCourse",
+    file: "/certificates/cert-4.png",
+  },
+  {
+    title: "HR Recruiter Quiz",
+    description: "Nauvi Solutions",
+    file: "/certificates/cert-5.jpg",
+  },
+  {
+    title: "Resume",
     description: "Updated professional resume",
-    file: "/certificates/cv-resume.pdf",
+    file: "/certificates/resume.jpg",
   },
-  {
-    title: "Skills Profile",
-    description: "Web & API Security Skill Profile",
-    file: "/certificates/skills-profile.pdf",
-  },
+
   {
     title: "Self Introduction CV",
     description: "Full personal introduction CV",
-    file: "/certificates/Self_Introduction_Magam_Sri_Krishna.pdf",
+    file: "/certificates/cv.jpg",
   },
 ];
 
@@ -76,7 +92,7 @@ const CertificateGallery = () => {
                 asChild
               >
                 <a href={cert.file} target="_blank">
-                  <FileText className="mr-2 h-5 w-5" /> View PDF
+                  <FileText className="mr-2 h-5 w-5" /> View File
                 </a>
               </Button>
             </div>
@@ -84,7 +100,7 @@ const CertificateGallery = () => {
 
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

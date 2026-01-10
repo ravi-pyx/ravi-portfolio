@@ -4,15 +4,15 @@ import { useEffect } from "react";
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Security Testing",
+      category: "Security Engineering",
       skills: [
-        "Network Security",
-        "Vulnerability Assessment",
-        "Penetration Testing",
-        "Web App Testing",
-        "API Testing",
-        "SIEM (Splunk)",
-        "Incident Response",
+        "Application Security",
+        "Network & Infrastructure Security",
+        "Risk & Vulnerability Management",
+        "Secure System Design",
+        "Web & API Security",
+        "Security Monitoring (SIEM)",
+        "Incident Detection & Response",
       ],
     },
     {
@@ -21,27 +21,27 @@ const Skills = () => {
         "Nmap",
         "Wireshark",
         "Burp Suite",
-        "Maltego",
         "Kali Linux",
         "Parrot OS",
+        "Splunk (SIEM)",
         "Postman",
         "OWASP ZAP",
       ],
     },
     {
-      category: "Programming & Scripting",
-      skills: ["Python", "Bash", "JavaScript", "HTML/CSS", "SQL/MySQL", "GraphQL", "REST APIs"],
+      category: "Security-focused",
+      skills: ["Python (Security Automation)", "Bash (System Hardening)", "JavaScript (App Security)", "HTML/CSS", "SQL / MySQL", "REST APIs", "GraphQL Security"],
     },
     {
-      category: "Specializations",
+      category: "Security Domains",
       skills: [
-        "OSINT",
-        "Threat Intelligence",
-        "BOLA/IDOR",
-        "XSS & SQLi",
-        "CSRF",
-        "Authentication Bypass",
-        "Authorization Flaws",
+        "Application Security",
+        "Network Security",
+        "Identity & Access Management (IAM)",
+        "Threat Detection & Analysis",
+        "Vulnerability Management",
+        "Secure Architecture Design",
+        "Incident Response",
       ],
     },
   ];
@@ -58,7 +58,7 @@ const Skills = () => {
             <p className="text-primary terminal-text text-sm tracking-wider">&gt; skills.scan()</p>
             <h2 className="text-4xl lg:text-5xl font-bold glow-text">Technical Arsenal</h2>
             <p className="text-lg text-muted-foreground">
-              Tools, technologies & frameworks I use to secure digital infrastructures
+              Tools and technologies used to build and defend secure systems.
             </p>
           </div>
 
@@ -105,9 +105,8 @@ const Skills = () => {
           {/* Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             {[
-              { value: "10+", label: "CTF Challenges" },
               { value: "Multiple", label: "Certifications" },
-              { value: "Bug Hunter", label: "Active Status" },
+              { value: "SECURITY ENGINEER", label: "Active Status" },
               { value: "2026", label: "Graduating" },
             ].map((stat, idx) => (
               <div
