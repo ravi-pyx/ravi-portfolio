@@ -13,8 +13,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "madduravibhaskar@gmail.com",
-      href: "mailto:madduravibhaskar@gmail.com",
+      value: "ravibhaskarmaddu@gmail.com",
+      href: "mailto:ravibhaskarmaddu@gmail.com",
     },
     {
       icon: Phone,
@@ -169,7 +169,7 @@ const Contact = () => {
               </div>
 
               {/* SEND MESSAGE BUTTON (HOLOGRAM) */}
-              <a href="mailto:madduravibhaskar@gmail.com">
+              <a href="mailto:ravibhaskarmaddu@gmail.com">
                 <button className="holo w-full py-4 text-lg rounded-lg flex items-center justify-center gap-2">
                   <Mail className="h-6 w-6" />
                   Send Message
