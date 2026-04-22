@@ -39,7 +39,7 @@ const Contact = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://www.instagram.com/ravi_xt9",
+      href: "https://www.instagram.com/arjun_xt90",
     },
   ];
 

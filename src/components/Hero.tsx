@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/ravi_xt9"
+                href="https://www.instagram.com/arjun_xt90"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary hover:scale-110 transition-all"
